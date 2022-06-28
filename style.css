@@ -38,7 +38,6 @@ h1 {
   width: 50%;
   height: 45%;
   border-radius: 100%;
-  background-color: #fff;
   opacity: .7;
   position: absolute;
   top: 15%;
@@ -47,62 +46,77 @@ h1 {
 
 .steel {
 	background-color: #f4f4f4;
+	border-radius: 20px;
 }
 
 .fire {
 	background-color: #FDDFDF;
+	border-radius: 20px;
 }
 
 .grass {
 	background-color: #DEFDE0;
+	border-radius: 20px;
 }
 
 .electric {
 	background-color: #FCF7DE;
+	border-radius: 20px;
 }
 
 .water, .ice {
 	background-color: #DEF3FD;
+	border-radius: 20px;
 }
 
 .ground {
 	background-color: #f4e7da;
+	border-radius: 20px;
 }
 
 .rock {
 	background-color: #d5d5d4;
+	border-radius: 20px;
 }
 
 .fairy {
 	background-color: #fceaff;
+	border-radius: 20px;
 }
 
 .poison {
 	background-color: #98d7a5;
+	border-radius: 20px;
 }
 
 .bug {
 	background-color: #f8d5a3;
+	border-radius: 20px;
 }
 
 .dragon {
 	background-color: #97b3e6;
+	border-radius: 20px;
 }
 
 .psychic {
 	background-color: #eaeda1;
+	border-radius: 20px;
 }
 
 .flying {
 	background-color: #F5F5F5;
+	border-radius: 20px;
 }
 
 .fighting {
 	background-color: #E6E0D4;
+	border-radius: 20px;
 }
 
 .normal {
 	background-color: #F5F5F5;
+	border-radius: 20px;
 }
 
 .card:hover {
