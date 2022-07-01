@@ -11,9 +11,13 @@
 <body>
     <div class="container">
         <h1>Digidex</h1>
-        <p class="search">Busca: <input 
-        value= ""/></p>
-        <ul data-js="digidex" class="digidex"></ul>
+        <input 
+            value= ""
+            name="searchBar"
+            id="searchBar"
+            placeholder="Digite o Digimon ou o Nível"
+        />
+        <ul data-js="digidex" id="lisDigimons" class="digidex"></ul>
     </div>
 
     <script src="app.js"></script>

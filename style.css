@@ -25,11 +25,15 @@ h1 {
     margin-bottom: 16px;
 }
 
-.search, input {
+input {
+	display: block;
     font-family: 'Roboto', sans-serif;
-    text-align: center;
+    margin: 16px auto;
     border-radius: 5px;
     font-size: 22px;
+	width: 380px;
+	text-align: center;
+	padding: 6px;
 }
 
 .digidex {
@@ -49,6 +53,11 @@ h1 {
 	border-radius: 20px;
 	position: relative;
 	margin: 22px;
+	transition: 0.5s;
+}
+
+.card:hover {
+	filter: drop-shadow(0 0 0.75rem rgba(61, 28, 28, 0.781));
 }
 
 .card-title {
@@ -74,3 +83,4 @@ h1 {
 	position: relative;
 	z-index: 2;
 }
+
