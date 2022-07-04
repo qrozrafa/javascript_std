@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- BOX ICONS -->
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <!-- LINK CSS -->
+    <link rel="stylesheet" href="style.css">
+        
+    <title>Calculadora</title>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="calculadora">
+            <!-- display -->
+            <div class="display">
+                <div id="valor-anterior"></div>
+                <div id="valor-atual"></div>
+            </div>  
+            <button onclick="display.limpar()" class="limpar button">CE</button>
+            <button onclick="display.apagar()" class="delete button">&larr;</button>
+            <button id="button-special" class="operador" value="dividir">/</button>
+
+            <button class="numero button">7</button>
+            <button class="numero button">8</button>
+            <button class="numero button">9</button>
+            <button id="button-special" class="operador" value="multiplicar">X</button>
+
+            <button class="numero button">4</button>
+            <button class="numero button">5</button>
+            <button class="numero button">6</button>
+            <button id="button-special" class="operador" value="subtrair">-</button>
+
+            <button class="numero button">1</button>
+            <button class="numero button">2</button>
+            <button class="numero button">3</button>
+            <button id="button-special" class="operador" value="somar">+</button>
+
+            <i class='bx bx-moon change-theme thema' id="theme-button"></i>
+            <button class="numero button">0</button>
+            <button class="numero button">.</button>
+            <button id="button-special" class="operador" value="igual">=</button>  
+        </div>
+    </div>
+
+    <footer>
+        <p class="footer__copy">&#169; Rafael de Queiroz - Web2 - IFMS.2021 </p>
+    </footer>
+    <!-- SCROLL REVEAL -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <!-- SCRIPT -->
+    <script src="Display.js"></script>
+    <script src="Calculadora.js"></script>
+    <script src="index.js" ></script>
+    <script src="script.js"></script>
+    
+</body>
+</html>
