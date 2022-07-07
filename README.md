@@ -1,1 +1,1 @@
-"# repositorio destinado para estudo de javascript" 
+"#repositorio destinado para estudo de javascript" 
