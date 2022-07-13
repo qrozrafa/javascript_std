@@ -6,16 +6,19 @@ const form = document.querySelector('#form');
 const inputTransactionName = document.querySelector('#text');
 const inputTransactionAmount = document.querySelector('#amount');
 
-let dummyTransactions = [
-    { id: 1, name: 'Bolo de brigadeiro', amount: -20 },
-    { id: 2, name: 'Salario', amount: 300 },
-    { id: 3, name: 'Torta de frango', amount: -10 },
-    { id: 4, name: 'Violão', amount: 150 }
-];
+//amazenando a informação na memoria do browser
+const localStorageTransactions = JSON.parse(localStorage
+    .getItem('transactions'));
+//armazendo as transação existente ou vazias se nao tiver transação
+let transactions = localStorage
+    .getItem('transactions') !== null ? localStorageTransactions : [];
+
 
 //removendo transação
 const removeTransaction = ID => {
-    dummyTransactions = dummyTransactions.filter(transaction => transaction.id !== ID);
+    transactions = transactions.filter(transaction => 
+        transaction.id !== ID);
+    updateLocalStorage();    
     init();
 };
 
@@ -40,7 +43,7 @@ const addTransactionIntoDom = transaction => {
 //manipulando os valores receitas e despesas
 const updateBalanceValues = () => {
     //criando uma array de amounts com metodo map
-    const transactionsAmounts = dummyTransactions
+    const transactionsAmounts = transactions
         .map(transaction => transaction.amount);
     //somando total dos amounts
     const total = transactionsAmounts
@@ -67,11 +70,16 @@ const init = () => {
     //limpando as ul para cada preenchimento
     transactionUl.innerHTML = '';
     //interando a transação da array, cada item dessa array sendo inserida no DOM
-    dummyTransactions.forEach(addTransactionIntoDom);
+    transactions.forEach(addTransactionIntoDom);
     updateBalanceValues()
 };
 
 init();
+
+//adicinando a informção no localStorege
+const updateLocalStorage = () => {
+    localStorage.setItem('transactions', JSON.stringify(transactions));
+};
 
 //gerando id
 const generateID = () => Math.round(Math.random() * 1000);
@@ -95,9 +103,10 @@ form.addEventListener('submit', event => {
         amount: Number(transactionAmount)
     };
 
-    //inserido o obj transaction no dummyTransactions
-    dummyTransactions.push(transaction);
+    //inserido o obj transaction no transactions
+    transactions.push(transaction);
     init();
+    updateLocalStorage();
 
     //limpando os inputs
     inputTransactionName.value = '';
