@@ -6,12 +6,18 @@ const form = document.querySelector('#form');
 const inputTransactionName = document.querySelector('#text');
 const inputTransactionAmount = document.querySelector('#amount');
 
-const dummyTransactions = [
+let dummyTransactions = [
     { id: 1, name: 'Bolo de brigadeiro', amount: -20 },
     { id: 2, name: 'Salario', amount: 300 },
     { id: 3, name: 'Torta de frango', amount: -10 },
     { id: 4, name: 'Violão', amount: 150 }
 ];
+
+//removendo transação
+const removeTransaction = ID => {
+    dummyTransactions = dummyTransactions.filter(transaction => transaction.id !== ID);
+    init();
+};
 
 //adicionando as transições no DOM
 const addTransactionIntoDom = transaction => {
@@ -24,7 +30,9 @@ const addTransactionIntoDom = transaction => {
     li.innerHTML= `
         ${transaction.name} 
         <span>${operator} R$ ${amountWithoutOperator}</span>
-        <button class="delete-btn">x</button> 
+        <button class="delete-btn" onClick="removeTransaction(${transaction.id})">
+            x
+        </button> 
     `
     transactionUl.prepend(li);
 };
@@ -52,7 +60,7 @@ const updateBalanceValues = () => {
     balanceDisplay.textContent = `R$ ${total}`;
     incomeDisplay.textContent = `R$ ${income}`;
     expenseDisplay.textContent = `R$ ${expense}`;
-}
+};
 
 //preenchendo as informações mesmo com recarregamento da paginas
 const init = () => {
@@ -61,7 +69,7 @@ const init = () => {
     //interando a transação da array, cada item dessa array sendo inserida no DOM
     dummyTransactions.forEach(addTransactionIntoDom);
     updateBalanceValues()
-}
+};
 
 init();
 
