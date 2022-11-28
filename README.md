@@ -1,1 +1,8 @@
-"# repositorio destinado para estudo de javascript" 
+# Pokedex
+
+Inspirado e guiado por **Roger Melo**
+
+## Ferramentas
+- HTML
+- CSS
+- JS
